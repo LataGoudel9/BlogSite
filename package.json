@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.3",
+    "@material-ui/icons": "^4.4.3",
+    "markdown": "^0.5.0",
+    "markdown-loader": "^5.1.0",
+    "markdown-to-jsx": "^5.2.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2"
