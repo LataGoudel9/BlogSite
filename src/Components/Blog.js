@@ -16,6 +16,12 @@ import Link from '@material-ui/core/Link';
 import NavBar from './NavBar.js'
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Hidden from '@material-ui/core/Hidden';
+import Logo from './LLL.jpg';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import Page1 from './PageFit1.js';
+import { NavLink } from 'react-router-dom';
+
+
 
 //colors
 import grey from '@material-ui/core/colors/grey';
@@ -25,6 +31,8 @@ import pink from '@material-ui/core/colors/pink';
 
 const primary = pink[100]; // #F44336
 const accent = grey[900]; // #E040FB
+
+
 
 
 function Copyright() {
@@ -49,7 +57,6 @@ const useStyles = makeStyles(theme => ({
   },
   heroContent: {
     backgroundColor: primary,
-    padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -87,7 +94,7 @@ export default function Blog() {
 
       <AppBar position="relative" style={{backgroundColor: accent}}>
         <Toolbar>
-          <CameraIcon className={classes.icon} />
+          <FavoriteIcon className={classes.icon} />
           <Typography variant="h6" color="inherit" noWrap>
             Livin Like Lata
           </Typography>
@@ -96,14 +103,8 @@ export default function Blog() {
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
+          <img src={Logo} />
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                Living Like Lata
-            </Typography>
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              A fun space to share and learn how to live your best life like Lata.
-
-            </Typography>
 
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
@@ -129,9 +130,9 @@ export default function Blog() {
                         <Typography variant="subtitle1" paragraph>
                           We all know the struggles of waking up every morning just to see that we havent cut down on the numbers. Let me tell you know just how easy it is to really just not.
                         </Typography>
-                        <Typography variant="subtitle1" color="primary">
-                          Continue reading...
-                        </Typography>
+
+                        <NavLink to="/page1">Continue Reading...</NavLink>
+
                       </CardContent>
                     </div>
                     <Hidden xsDown>

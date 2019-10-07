@@ -8,10 +8,19 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import SportsHandballIcon from '@material-ui/icons/SportsHandball';
 import EmojiNatureIcon from '@material-ui/icons/EmojiNature';
+import pink from '@material-ui/core/colors/pink';
+import grey from '@material-ui/core/colors/grey';
+
+
+const primary = pink[100]; // #F44336
+const accent = grey[900]; // #E040FB
+
+
 
 const useStyles = makeStyles({
   root: {
     width: 500,
+    backgroundColor: primary,
   },
 });
 
@@ -22,6 +31,7 @@ export default function SimpleBottomNavigation() {
   return (
     <BottomNavigation
       value={value}
+      color = {accent}
       onChange={(event, newValue) => {
         setValue(newValue);
       }}
