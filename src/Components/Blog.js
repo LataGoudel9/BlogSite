@@ -1,6 +1,8 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
 import CameraIcon from '@material-ui/icons/PhotoCamera';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -12,7 +14,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
 import NavBar from './NavBar.js'
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Hidden from '@material-ui/core/Hidden';
@@ -20,6 +21,9 @@ import Logo from './LLL.jpg';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Page1 from './PageFit1.js';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import IconButton from '@material-ui/core/IconButton';
+
 
 
 
@@ -48,7 +52,7 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles(theme => ({
+const usestyles = theme => ({
   icon: {
     marginRight: theme.spacing(2),
   },
@@ -77,16 +81,31 @@ const useStyles = makeStyles(theme => ({
   cardContent: {
     flexGrow: 1,
   },
+  menuButton: {
+   marginRight: theme.spacing(2),
+ },
+ title: {
+    flexGrow: 1,
+  },
   footer: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
-}));
+});
 
 const cards = [1,2,3];
 
-export default function Blog() {
-  const classes = useStyles();
+class Blog extends React.Component {
+  constructor(props){
+   super(props);
+   this.state = {
+     name: "Sign in"
+ };
+ }
+ 
+  render(){
+    const {classes} = this.props;
+
 
   return (
     <React.Fragment>
@@ -98,6 +117,12 @@ export default function Blog() {
           <Typography variant="h6" color="inherit" noWrap>
             Livin Like Lata
           </Typography>
+          <Typography variant="h6" className={classes.title}>
+          </Typography>
+          <Button color="inherit"component={Link} to="/login">
+  {this.state.name}
+</Button>
+
         </Toolbar>
       </AppBar>
       <main>
@@ -164,3 +189,5 @@ export default function Blog() {
     </React.Fragment>
   );
 }
+}
+export default withStyles(usestyles)(Blog);

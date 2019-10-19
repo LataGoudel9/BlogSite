@@ -5,6 +5,7 @@ import Blog from './Components/Blog.js';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Page1 from './Components/PageFit1.js';
 import Error from './Components/Error.js';
+import Login from './Components/Login.js';
 
 //import NavBar from './Components/NavBar.js';
 
@@ -16,8 +17,10 @@ function App() {
     <BrowserRouter>
         <div>
           <Switch>
-            <Route path="/" component={Blog} exact />
+            <Route path="/" component={Blog} exact/>
             <Route path="/Page1" component={Page1} />
+            <Route path="/login" component={Login} />
+
             <Route component={Error} />
           </Switch>
         </div>
