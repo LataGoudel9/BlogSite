@@ -102,7 +102,7 @@ class Blog extends React.Component {
      name: "Sign in"
  };
  }
- 
+
   render(){
     const {classes} = this.props;
 
@@ -150,10 +150,10 @@ class Blog extends React.Component {
                           Sick of Staring at the Scale?
                         </Typography>
                         <Typography variant="subtitle1" color="textSecondary">
-                          Your Wont Believe thes easy tricks that WONT help you lose ANY weight
+                          Your Wont Believe these easy tricks that WONT help you lose ANY weight
                         </Typography>
                         <Typography variant="subtitle1" paragraph>
-                          We all know the struggles of waking up every morning just to see that we havent cut down on the numbers. Let me tell you know just how easy it is to really just not.
+                          We all know the struggles of waking up every morning just to see that we havent cut down on the numbers. Let me tell you know just how easy it is to really just not care!
                         </Typography>
 
                         <NavLink to="/page1">Continue Reading...</NavLink>

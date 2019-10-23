@@ -10,23 +10,18 @@ import firebase from "firebase"
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"
 import { makeStyles } from '@material-ui/core/styles';
 
-firebase.initializeApp({
-  apiKey: "AIzaSyAWK_NuaMuk-GoRaeArHZFKePfMeoZUyGA",
-  authDomain: "latasblog-665c4.firebaseapp.com"
-})
-
 
 class Login extends Component {
   constructor(props){
    super(props);
+   this.firebase = this.props.app;
    this.state = {
      isSignedIn: false,
      person: ""
  };
  }
 
-
-  uiConfig = {
+ uiConfig = {
    signInFlow: "popup",
    signInOptions: [
      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -48,16 +43,14 @@ class Login extends Component {
    return (
      <div className="Login">
        {this.state.isSignedIn ? (
-         
+
          <span>
-         <Blog user = {this.state.person}/>
+         <Blog/>
            <button onClick={() => firebase.auth().signOut()}>Sign out!</button>
            <Typography variant="h6" color="inherit" noWrap>
            Welcome {firebase.auth().currentUser.displayName} !
            </Typography>
-           <Button color="inherit"component={Link} to="/">
-   Explore how to LLL!
- </Button>
+           <Button color="inherit"component={Link} to="/"> </Button>
          </span>
        ) : (
          <StyledFirebaseAuth
