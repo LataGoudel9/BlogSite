@@ -10,7 +10,7 @@
     "jquery": "^3.4.1",
     "markdown": "^0.5.0",
     "markdown-loader": "^5.1.0",
-    "markdown-to-jsx": "^5.2.0",
+    "markdown-to-jsx": "^6.11.4",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-firebaseui": "^4.0.0",
